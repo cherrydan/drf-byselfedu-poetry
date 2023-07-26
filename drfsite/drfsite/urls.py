@@ -23,13 +23,13 @@ from women.views import *
 # router = routers.DefaultRouter()
 # router.register(r'leather', LeatherViewSet, basename='leather')
 # # print(router.urls, end='\n')
-from drfsite.women.views import LeatherAPIDestroy, LeatherAPIList
+from women.views import LeatherAPIDestroy, LeatherAPIList, LeatherAPIUpdate, LeatherAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/drf-auth/', include('rest_framework.urls')),
     path('api/v1/leather/', LeatherAPIList.as_view()),
-    path('api/v1/leatherlist/', LeatherAPIView.)
+    path('api/v1/leatherlist/', LeatherAPIView.as_view()),
     path('api/v1/leather/<int:pk>/', LeatherAPIUpdate.as_view()),
     path('api/v1/leatherdelete/<int:pk>/', LeatherAPIDestroy.as_view()),
     path('api/v1/auth/', include('djoser.urls')),

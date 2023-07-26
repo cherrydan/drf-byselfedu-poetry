@@ -31,6 +31,11 @@ from .serializers import LeatherSerializer
 #
 #
 
+class LeatherAPIView(generics.ListAPIView):
+    queryset = LeatherClothes.objects.all()
+    serializer_class = LeatherSerializer
+
+
 class LeatherAPIList(generics.ListCreateAPIView):
     queryset = LeatherClothes.objects.all()
     serializer_class = LeatherSerializer
